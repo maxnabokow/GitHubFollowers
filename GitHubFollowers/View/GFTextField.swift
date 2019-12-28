@@ -26,7 +26,7 @@ class GFTextField: UITextField {
         
         layer.cornerRadius = 12
         layer.borderWidth = 2
-        layer.borderColor = UIColor.systemGray4.cgColor
+        layer.borderColor = UIColor.systemGray3.cgColor
         
         textColor = .label
         tintColor = .systemGreen
@@ -34,6 +34,8 @@ class GFTextField: UITextField {
         font = .preferredFont(forTextStyle: .title2)
         adjustsFontSizeToFitWidth = true
         minimumFontSize = 12
+        
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {

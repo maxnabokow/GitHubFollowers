@@ -98,8 +98,8 @@
 		506B0F2423B80D8800FE5982 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				506B0F2223B80D8400FE5982 /* GFButton.swift */,
 				506B0F2523B8134800FE5982 /* GFTextField.swift */,
+				506B0F2223B80D8400FE5982 /* GFButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
