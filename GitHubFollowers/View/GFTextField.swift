@@ -25,7 +25,7 @@ class GFTextField: UITextField {
         autocapitalizationType = .none
         
         layer.cornerRadius = 12
-        layer.borderWidth = 2
+        layer.borderWidth = 1
         layer.borderColor = UIColor.systemGray3.cgColor
         
         textColor = .label

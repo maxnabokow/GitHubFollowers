@@ -63,7 +63,7 @@ class SearchVC: UIViewController {
         usernameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         view.addSubview(getFollowersButton)
-        getFollowersButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 50, right: 50))
+        getFollowersButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 50, right: 50))
         getFollowersButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
