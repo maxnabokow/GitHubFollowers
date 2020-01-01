@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501CB27423BCC9E600FA6407 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CB27323BCC9E600FA6407 /* Follower.swift */; };
+		501CB27623BCCAAC00FA6407 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CB27523BCCAAC00FA6407 /* User.swift */; };
 		506B0EFA23B803A000FE5982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B0EF923B803A000FE5982 /* AppDelegate.swift */; };
 		506B0EFC23B803A000FE5982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B0EFB23B803A000FE5982 /* SceneDelegate.swift */; };
 		506B0F0323B803AA00FE5982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506B0F0223B803AA00FE5982 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		501CB27323BCC9E600FA6407 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		501CB27523BCCAAC00FA6407 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		506B0EF623B803A000FE5982 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		506B0EF923B803A000FE5982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		506B0EFB23B803A000FE5982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		501CB27223BCC8C000FA6407 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				501CB27323BCC9E600FA6407 /* Follower.swift */,
+				501CB27523BCCAAC00FA6407 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		506B0EED23B803A000FE5982 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +95,7 @@
 			children = (
 				506B0EF923B803A000FE5982 /* AppDelegate.swift */,
 				506B0EFB23B803A000FE5982 /* SceneDelegate.swift */,
+				501CB27223BCC8C000FA6407 /* Model */,
 				506B0F2423B80D8800FE5982 /* View */,
 				506B0F2123B80D4C00FE5982 /* Controller */,
 				506B0F0223B803AA00FE5982 /* Assets.xcassets */,
@@ -199,7 +213,9 @@
 				50B9B0F123BC48D400819BEB /* UIViewController +Ext.swift in Sources */,
 				506B0F2323B80D8400FE5982 /* GFButton.swift in Sources */,
 				50B9B0E423BC353500819BEB /* SearchVC +TextFieldDelegate.swift in Sources */,
+				501CB27623BCCAAC00FA6407 /* User.swift in Sources */,
 				50B9B0EF23BC41D000819BEB /* GFAlertVC.swift in Sources */,
+				501CB27423BCC9E600FA6407 /* Follower.swift in Sources */,
 				506B0F1923B806DC00FE5982 /* SearchVC.swift in Sources */,
 				50B9B0EB23BC3FCC00819BEB /* GFTitleLabel.swift in Sources */,
 				506B0EFA23B803A000FE5982 /* AppDelegate.swift in Sources */,
