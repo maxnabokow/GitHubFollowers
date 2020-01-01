@@ -23,6 +23,7 @@ class GFTextField: UITextField {
         placeholder = "Enter a username"
         autocorrectionType = .no
         autocapitalizationType = .none
+        returnKeyType = .go
         
         layer.cornerRadius = 12
         layer.borderWidth = 1
@@ -34,8 +35,6 @@ class GFTextField: UITextField {
         font = .preferredFont(forTextStyle: .title2)
         adjustsFontSizeToFitWidth = true
         minimumFontSize = 12
-        
-        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {

@@ -19,25 +19,53 @@ class SearchVC: UIViewController {
     
     fileprivate let usernameTextField = GFTextField()
     
-    fileprivate let getFollowersButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    fileprivate let getFollowersButton: UIButton = {
+        let b = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+        b.addTarget(self, action: #selector(pushFollowersVC), for: .touchUpInside)
+        return b
+    }()
     
     // MARK: - Properties
     
-    
+    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameTextField.delegate = self
+        
         setupUI()
         setupLayout()
+        setupKeyboardDismissGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func pushFollowersVC() {
+        guard isUsernameEntered else {
+            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. We need to know who to look for.", buttonTitle: "OK")
+            return
+        }
+        
+        let followersVC = FollowersVC()
+        followersVC.username = usernameTextField.text
+        followersVC.title = usernameTextField.text
+        navigationController?.pushViewController(followersVC, animated: true)
+    }
+    
+    // MARK: - Helper Functions
+    
+    fileprivate func setupKeyboardDismissGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
     
     // MARK: - UI Setup
@@ -74,12 +102,5 @@ class SearchVC: UIViewController {
             getFollowersButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
-    // MARK: - Selectors
-    
-    
-    
-    // MARK: - Helper Functions
-    
     
 }
