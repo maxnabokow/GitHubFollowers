@@ -38,7 +38,6 @@ class SearchVC: UIViewController {
         
         setupUI()
         setupLayout()
-        setupKeyboardDismissGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,9 +62,8 @@ class SearchVC: UIViewController {
     
     // MARK: - Helper Functions
     
-    fileprivate func setupKeyboardDismissGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        view.addGestureRecognizer(tap)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     // MARK: - UI Setup
