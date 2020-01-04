@@ -25,6 +25,17 @@ class FollowersVC: UIViewController {
         
         setupUI()
         setupLayout()
+        
+        guard let username = username else { return }
+        NetworkManager.shared.getFollowers(for: username, pageNr: 1) { [unowned self] (followers, errorMessage) in
+            guard let followers = followers else {
+                self.presentGFAlertOnMainThread(title: "Bad stuff happened.", message: errorMessage!, buttonTitle: "OK")
+                return
+            }
+            
+            print("Followers.count = \(followers.count)")
+            print(followers)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
