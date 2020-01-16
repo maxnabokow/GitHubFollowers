@@ -67,10 +67,13 @@ class FollowersVC: UIViewController {
     // MARK: - Helper Functions
     
     fileprivate func fetchFollowers(username: String?, page: Int) {
+        showLoadingView()
+        
         guard let username = username else { return }
         
         NetworkManager.shared.getFollowers(for: username, pageNr: page) { [weak self] (result) in
             guard let self = self else { return }
+            self.dismissLoadingView()
             
             switch result {
                 
