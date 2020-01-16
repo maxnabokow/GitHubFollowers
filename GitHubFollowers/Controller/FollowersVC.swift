@@ -13,18 +13,7 @@ class FollowersVC: UIViewController {
     // MARK: - UI Elements
     
     fileprivate lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        
-        let width = view.bounds.width
-        let padding: CGFloat = 12
-        let minimumItemSpacing: CGFloat = 10
-        let availableWidth = width - (padding * 2) - (minimumItemSpacing * 2)
-        let itemWidth = availableWidth / 3
-        
-        layout.sectionInset = .init(top: padding, left: padding, bottom: padding, right: padding)
-        layout.itemSize = .init(width: itemWidth, height: itemWidth + 40)
-        
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         cv.backgroundColor = .systemBackground
         cv.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseId)
         return cv
@@ -32,11 +21,11 @@ class FollowersVC: UIViewController {
     
     // MARK: - Properties
     
+    var username: String?
+    
     enum Section {
         case main
     }
-    
-    var username: String?
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     var followers = [Follower]()
@@ -77,7 +66,9 @@ class FollowersVC: UIViewController {
     fileprivate func fetchFollowers() {
         guard let username = username else { return }
         
-        NetworkManager.shared.getFollowers(for: username, pageNr: 1) { (result) in
+        NetworkManager.shared.getFollowers(for: username, pageNr: 1) { [weak self] (result) in
+            guard let self = self else { return }
+            
             switch result {
                 
             case .success(let followers):
@@ -106,5 +97,4 @@ class FollowersVC: UIViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
-    
 }
