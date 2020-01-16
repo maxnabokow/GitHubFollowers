@@ -30,6 +30,7 @@ class FollowersVC: UIViewController {
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     var followers = [Follower]()
+    var originalFollowers = [Follower]()
     var page = 1
     var hasMoreFollowers = true
     
@@ -42,6 +43,7 @@ class FollowersVC: UIViewController {
         setupLayout()
         fetchFollowers(username: username, page: page)
         configureDataSource()
+        configureSearchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +82,7 @@ class FollowersVC: UIViewController {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
+                self.originalFollowers.append(contentsOf: followers)
                 
                 if self.followers.isEmpty {
                     let message = "This user doesn't have any followers. Go follow them!"
@@ -89,7 +92,7 @@ class FollowersVC: UIViewController {
                     }
                 }
                 
-                self.updateData()
+                self.updateData(with: self.followers)
                 
             case.failure(let error):
                 self.presentGFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "OK")
@@ -105,7 +108,7 @@ class FollowersVC: UIViewController {
         })
     }
     
-    fileprivate func updateData() {
+    fileprivate func updateData(with followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -113,6 +116,15 @@ class FollowersVC: UIViewController {
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
+    }
+    
+    fileprivate func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
     }
 }
 
@@ -129,4 +141,31 @@ extension FollowersVC: UICollectionViewDelegate {
             fetchFollowers(username: username, page: page)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let follower = followers[indexPath.item]
+        
+        let userInfoVC = UserInfoVC()
+        userInfoVC.username = follower.login
+        
+        let navC = UINavigationController(rootViewController: userInfoVC)
+        
+        present(navC, animated: true)
+    }
+}
+
+extension FollowersVC: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        
+        followers = originalFollowers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        updateData(with: followers)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        followers = originalFollowers
+        updateData(with: followers)
+    }
+    
 }
