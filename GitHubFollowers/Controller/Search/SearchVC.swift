@@ -54,6 +54,7 @@ class SearchVC: UIViewController {
             return
         }
         
+        view.endEditing(true)
         let followersVC = FollowersVC()
         followersVC.username = usernameTextField.text
         followersVC.title = usernameTextField.text

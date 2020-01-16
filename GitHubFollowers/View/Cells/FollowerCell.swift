@@ -14,7 +14,7 @@ class FollowerCell: UICollectionViewCell {
     
     fileprivate let avatarImageView = GFAvatarImageView(frame: .zero)
     
-    fileprivate let usernameLabel = GFTitleLabel(textAlignment: .center, fontSize: 16)
+    fileprivate let usernameLabel = GFTitleLabel(textAlignment: .center, fontSize: 14)
     
     // MARK: - Properties
     
