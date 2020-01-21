@@ -8,6 +8,7 @@
 
 import UIKit
 
+// swiftlint:disable:next private_over_fileprivate
 fileprivate var containerView: UIView!
 
 extension UIViewController {

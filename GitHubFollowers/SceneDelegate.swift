@@ -52,4 +52,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return UINavigationController(rootViewController: favoritesVC)
     }
 }
-

@@ -24,7 +24,7 @@ class NetworkManager {
         }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let _ = error {
+            if error != nil {
                 completion(.failure(.unableToComplete))
             }
             
@@ -58,7 +58,7 @@ class NetworkManager {
         }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let _ = error {
+            if error != nil {
                 completion(.failure(.unableToComplete))
             }
             

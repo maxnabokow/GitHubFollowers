@@ -21,7 +21,6 @@ class GFAvatarImageView: UIImageView {
         setupUI()
     }
     
-    
     // MARK: - UI Setup
     
     fileprivate func setupUI() {
@@ -60,7 +59,6 @@ class GFAvatarImageView: UIImageView {
             
         }.resume()
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -10,7 +10,6 @@ import UIKit
 
 class GFButton: UIButton {
 
-    
     // MARK: - Init
     
     override init(frame: CGRect) {
