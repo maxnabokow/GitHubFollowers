@@ -74,9 +74,7 @@ class GFAlertVC: UIViewController {
         dismiss(animated: true)
     }
 
-
     // MARK: - Helper Functions
-
 
     // MARK: - UI Setup
 

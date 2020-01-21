@@ -64,8 +64,6 @@ class FollowersVC: UIViewController {
 
     // MARK: - Selectors
 
-
-
     // MARK: - Helper Functions
 
     fileprivate func fetchFollowers(username: String?, page: Int) {

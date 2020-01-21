@@ -12,11 +12,7 @@ class FavoritesVC: UIViewController {
 
     // MARK: - UI Elements
 
-
-
     // MARK: - Properties
-
-
 
     // MARK: - Lifecycle
 
@@ -39,9 +35,6 @@ class FavoritesVC: UIViewController {
 
     // MARK: - Selectors
 
-
-
     // MARK: - Helper Functions
-
 
 }

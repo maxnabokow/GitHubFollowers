@@ -12,8 +12,6 @@ class UserInfoVC: UIViewController {
 
     // MARK: - UI Elements
 
-
-
     // MARK: - Properties
 
     var username: String?
@@ -62,6 +60,5 @@ class UserInfoVC: UIViewController {
     }
 
     // MARK: - Helper Functions
-
 
 }
