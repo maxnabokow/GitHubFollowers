@@ -9,41 +9,41 @@
 import UIKit
 
 class FollowerCell: UICollectionViewCell {
-    
+
     // MARK: - UI Elements
-    
+
     fileprivate let avatarImageView = GFAvatarImageView(frame: .zero)
-    
+
     fileprivate let usernameLabel = GFTitleLabel(textAlignment: .center, fontSize: 14)
-    
+
     // MARK: - Properties
-    
+
     static let reuseId = "FollowerCell"
-    
+
     // MARK: - Init
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         setupUI()
         setupLayout()
     }
-    
+
     func configure(follower: Follower) {
         usernameLabel.text = follower.login
         avatarImageView.downloadImage(from: follower.avatarUrl)
     }
-    
+
     // MARK: - UI Setup
-    
+
     fileprivate func setupUI() {
-        
+
     }
-    
+
     fileprivate func setupLayout() {
-        
+
         let padding: CGFloat = 8
-        
+
         addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -52,7 +52,7 @@ class FollowerCell: UICollectionViewCell {
             avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor)
         ])
-        
+
         addSubview(usernameLabel)
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -61,9 +61,9 @@ class FollowerCell: UICollectionViewCell {
             usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             usernameLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
-        
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

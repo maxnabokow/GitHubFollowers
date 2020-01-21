@@ -9,10 +9,10 @@
 import UIKit
 
 extension SearchVC: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         pushFollowersVC()
         return true
     }
-    
+
 }

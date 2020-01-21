@@ -9,39 +9,39 @@
 import UIKit
 
 class FavoritesVC: UIViewController {
-    
+
     // MARK: - UI Elements
-    
-    
-    
+
+
+
     // MARK: - Properties
-    
-    
-    
+
+
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupUI()
         setupLayout()
     }
-    
+
     // MARK: - UI Setup
-    
+
     fileprivate func setupUI() {
         view.backgroundColor = .systemBlue
     }
-    
+
     fileprivate func setupLayout() {
-        
+
     }
-    
+
     // MARK: - Selectors
-    
-    
-    
+
+
+
     // MARK: - Helper Functions
-    
-    
+
+
 }
