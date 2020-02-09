@@ -11,7 +11,11 @@ import UIKit
 class UserInfoVC: UIViewController {
 
     // MARK: - UI Elements
-
+    let headerView: UIView = {
+        let v = UIView()
+        return v
+    }()
+    
     // MARK: - Properties
 
     var username: String?
@@ -35,7 +39,9 @@ class UserInfoVC: UIViewController {
             switch result {
 
             case .success(let user):
-                print(user)
+                DispatchQueue.main.async {
+                    self.add(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+                }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
 
@@ -50,7 +56,20 @@ class UserInfoVC: UIViewController {
     }
 
     fileprivate func setupLayout() {
-
+        view.addSubview(headerView)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 180)
+        ])
+    }
+    
+    fileprivate func add(childVC: UIViewController, to containerView: UIView) {
+        addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
     }
 
     // MARK: - Selectors

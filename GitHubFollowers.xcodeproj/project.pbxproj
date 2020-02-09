@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500D8E4323EF4A6100779E4D /* GFUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D8E4223EF4A6100779E4D /* GFUserInfoHeaderVC.swift */; };
+		500D8E4523EF4B0400779E4D /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D8E4423EF4B0400779E4D /* GFSecondaryTitleLabel.swift */; };
+		500D8E4723EFA71100779E4D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500D8E4623EFA71100779E4D /* Constants.swift */; };
 		501CB27423BCC9E600FA6407 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CB27323BCC9E600FA6407 /* Follower.swift */; };
 		501CB27623BCCAAC00FA6407 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501CB27523BCCAAC00FA6407 /* User.swift */; };
 		506B0EFA23B803A000FE5982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B0EF923B803A000FE5982 /* AppDelegate.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500D8E4223EF4A6100779E4D /* GFUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		500D8E4423EF4B0400779E4D /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		500D8E4623EFA71100779E4D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		501CB27323BCC9E600FA6407 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		501CB27523BCCAAC00FA6407 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		506B0EF623B803A000FE5982 /* GitHubFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +136,7 @@
 				50B9B0EE23BC41D000819BEB /* GFAlertVC.swift */,
 				50B9B0F023BC48D400819BEB /* UIViewController +Ext.swift */,
 				506E96F523D0354400249802 /* UserInfoVC.swift */,
+				500D8E4223EF4A6100779E4D /* GFUserInfoHeaderVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 				50B9B0EC23BC410300819BEB /* GFBodyLabel.swift */,
 				506CAA3823C9750F00A00E66 /* GFAvatarImageView.swift */,
 				506E96F323D02B6900249802 /* GFEmptyStateView.swift */,
+				500D8E4423EF4B0400779E4D /* GFSecondaryTitleLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			children = (
 				506E96F123D0198E00249802 /* UIHelper.swift */,
 				506E96F723D03D5600249802 /* GFError.swift */,
+				500D8E4623EFA71100779E4D /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -277,9 +286,11 @@
 				506B0F2623B8134800FE5982 /* GFTextField.swift in Sources */,
 				506B0F1D23B809AC00FE5982 /* FavoritesVC.swift in Sources */,
 				50B9B0E723BC360600819BEB /* FollowersVC.swift in Sources */,
+				500D8E4323EF4A6100779E4D /* GFUserInfoHeaderVC.swift in Sources */,
 				50B9B0F123BC48D400819BEB /* UIViewController +Ext.swift in Sources */,
 				50A86C9923C0C025005D014A /* NetworkManager.swift in Sources */,
 				506E96F423D02B6900249802 /* GFEmptyStateView.swift in Sources */,
+				500D8E4523EF4B0400779E4D /* GFSecondaryTitleLabel.swift in Sources */,
 				506B0F2323B80D8400FE5982 /* GFButton.swift in Sources */,
 				50B9B0E423BC353500819BEB /* SearchVC +TextFieldDelegate.swift in Sources */,
 				506E96F823D03D5600249802 /* GFError.swift in Sources */,
@@ -295,6 +306,7 @@
 				506E96F223D0198E00249802 /* UIHelper.swift in Sources */,
 				506B0EFC23B803A000FE5982 /* SceneDelegate.swift in Sources */,
 				50B9B0ED23BC410300819BEB /* GFBodyLabel.swift in Sources */,
+				500D8E4723EFA71100779E4D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
